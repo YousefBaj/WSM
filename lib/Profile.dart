@@ -350,7 +350,7 @@ class _profileState extends State<profile> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "إجاباتك",
+                            "تحدياتك",
                             style: profileBoxtitlie,
                           ),
                           SizedBox(
@@ -359,7 +359,7 @@ class _profileState extends State<profile> {
                           Container(
                             width: 20,
                             height: 20,
-                            child: Image.asset("assets/images/checklist.png"),
+                            child: Image.asset("assets/images/fire.png"),
                           ),
                         ],
                       ),
@@ -370,43 +370,17 @@ class _profileState extends State<profile> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                          "سؤال",
+                          "تحدي",
                           style: profileCurrncy,
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         Text(
-                          "٣٠٠",
+                          "٤٠",
                           style: profileMoney,
                         ),
                       ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              "تفاصيل",
-                              style: profileDetils,
-                            ),
-                            SizedBox(
-                              width: 3,
-                            ),
-                            CircleAvatar(
-                              radius: 8,
-                              backgroundColor: Colors.white,
-                              child: Icon(
-                                Icons.keyboard_arrow_right,
-                                color: Color(0xffBA57D3),
-                                size: 17,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
                     ),
                   ],
                 ),

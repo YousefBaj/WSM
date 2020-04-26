@@ -72,6 +72,12 @@ flutter:
    - assets/images/av7.png
    - assets/images/av8.png
    - assets/images/av9.png
+   - assets/images/test1.jpg
+   - assets/images/test2.jpg
+   - assets/images/test3.jpg
+   - assets/images/test4.jpg
+   - assets/images/test5.jpg
+   - assets/images/fire.png
 
   #   - images/a_dot_ham.jpeg
 

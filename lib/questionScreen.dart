@@ -36,22 +36,37 @@ class _questionScreenState extends State<questionScreen> {
   }
 
   void clear() {
-    _isButtonDisabled = true;
-    _points.clear();
+    setState(() {
+      xmin = double.infinity;
+      ymin = double.infinity;
+      xmax = 0;
+      ymax = 0;
+
+      _isButtonDisabled = true;
+      _points.clear();
+    });
   }
 
   List<DrawQuestion> question = [
     DrawQuestion(
-        question: "ارسم مكان البنطال ", image: "assets/images/image-1.png"),
+        question: "ارسم مكان الجينز ", image: "assets/images/test1.jpg"),
     DrawQuestion(
-        question: "ارسم مكان البنطال ", image: "assets/images/image-2.png"),
+        question: "ارسم مكان الجينز ", image: "assets/images/image-2.png"),
     DrawQuestion(
-        question: "ارسم مكان البنطال ", image: "assets/images/image-3.png"),
+        question: "ارسم مكان الجينز ", image: "assets/images/image-3.png"),
   ];
   List<Questions> questions = [
     Questions(
         draw: DrawQuestion(
-            question: "ارسم مكان البنطال ", image: "assets/images/image-1.png"),
+            question: "ارسم مكان الجينز ", image: "assets/images/test1.jpg"),
+        mcq: null),
+    Questions(
+        draw: DrawQuestion(
+            question: "ارسم مكان الجينز ", image: "assets/images/test3.jpg"),
+        mcq: null),
+    Questions(
+        draw: DrawQuestion(
+            question: "ارسم مكان الجينز ", image: "assets/images/test2.jpg"),
         mcq: null),
     Questions(
         draw: null,
@@ -60,7 +75,11 @@ class _questionScreenState extends State<questionScreen> {
             image: "assets/images/image-1.png")),
     Questions(
         draw: DrawQuestion(
-            question: "ارسم مكان البنطال ", image: "assets/images/image-1.png"),
+            question: "ارسم مكان الشورت ", image: "assets/images/test4.jpg"),
+        mcq: null),
+    Questions(
+        draw: DrawQuestion(
+            question: "ارسم مكان القميص ", image: "assets/images/test5.jpg"),
         mcq: null),
   ];
 
@@ -169,10 +188,7 @@ class _questionScreenState extends State<questionScreen> {
                   ),
                 ),
                 whichone(),
-                SizedBox(
-                  height: 5,
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.09),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
@@ -388,9 +404,11 @@ class _questionScreenState extends State<questionScreen> {
                   setState(() {
                     RenderBox object = context.findRenderObject();
                     Offset _localPosition = object.globalToLocal(
-                        details.globalPosition.translate(-25, -95));
-
-                    if (_localPosition.dy < 400 &&
+                        details.globalPosition.translate(
+                            -25, -(MediaQuery.of(context).size.height * 0.09)));
+                    print(MediaQuery.of(context).size.height * 0.43);
+                    if (_localPosition.dy <
+                            MediaQuery.of(context).size.height * 0.45 &&
                         _localPosition.dy > 0 &&
                         _localPosition.dx > 0 &&
                         _localPosition.dx < 362) {
@@ -413,6 +431,7 @@ class _questionScreenState extends State<questionScreen> {
                       setState(() {
                         _isButtonDisabled = false;
                       });
+                      print(_localPosition);
                       _points = new List.from(_points)..add(_localPosition);
                     }
                   });
@@ -458,7 +477,7 @@ class _questionScreenState extends State<questionScreen> {
                     ),
                     child: FloatingActionButton.extended(
                       heroTag: 4,
-                      onPressed: () => _points.clear(),
+                      onPressed: () => clear(),
                       elevation: 0,
                       label: Text(
                         ' إعادة الرسم',
@@ -522,7 +541,7 @@ class _questionScreenState extends State<questionScreen> {
           ),
           content: SingleChildScrollView(
             child: Text(
-              'مبروك لقد ربحت ٥ هللات',
+              'مبروك لقد ربحت ٥٠ نقطة',
               style: TextStyle(
                 color: Color(
                   0xff333333,
@@ -534,60 +553,33 @@ class _questionScreenState extends State<questionScreen> {
             ),
           ),
           actions: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                  width: MediaQuery.of(context).size.width * 0.30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(40),
-                    ),
-                    color: Color(0xff8176DE),
-                  ),
-                  child: FlatButton(
-                    child: Text(
-                      'إلعب مرة أخرى',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Cairo',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      int count = 0;
-                      Navigator.popUntil(context, (route) {
-                        return count++ == 2;
-                      });
-                    },
-                  )),
+            Container(
+              width: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(40),
+                ),
+                color: Color(0xff8176DE),
+              ),
+              child: FlatButton(
+                child: Text(
+                  'العودة للشاشة الرئيسية',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Cairo',
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () {
+                  int count = 0;
+                  Navigator.popUntil(context, (route) {
+                    return count++ == 2;
+                  });
+                },
+              ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                  width: MediaQuery.of(context).size.width * 0.30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(40),
-                    ),
-                    color: Color(0xff2EADC7),
-                  ),
-                  child: FlatButton(
-                    child: Text(
-                      'النتايج',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Cairo',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: () {
-                      cancelTimer();
-
-                      // Add your onPressed code
-                    },
-                  )),
-            ),
+            SizedBox(width: 20),
           ],
         );
       },
@@ -722,7 +714,7 @@ class Signature extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = new Paint()
-      ..color = Colors.blue
+      ..color = Color(0xffAA7AD6)
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 5.0;
 
