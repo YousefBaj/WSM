@@ -138,6 +138,7 @@ class _leaderboardState extends State<leaderboard> {
   Widget winCard(int index) {
     Color color1 = Colors.white;
     Color color2 = Colors.white;
+    int imageNum = (index % 8) + 1;
     Widget trophy = Text(
       "${index}",
       style: TextStyle(
@@ -314,7 +315,7 @@ class _leaderboardState extends State<leaderboard> {
                     height: 40,
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset("assets/images/av1.png"))),
+                        child: Image.asset("assets/images/av$imageNum.png"))),
                 Container(
                   margin: EdgeInsets.only(left: 25, bottom: 10),
                   child: CircleAvatar(
