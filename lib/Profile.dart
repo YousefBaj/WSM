@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wsm/ProfitScreen.dart';
 
 import 'style.dart';
 
@@ -190,32 +189,6 @@ class _profileState extends State<profile> {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              "تفاصيل",
-                              style: profileDetils,
-                            ),
-                            SizedBox(
-                              width: 3,
-                            ),
-                            CircleAvatar(
-                              radius: 8,
-                              backgroundColor: Colors.white,
-                              child: Icon(
-                                Icons.keyboard_arrow_right,
-                                color: Color(0xffBA57D3),
-                                size: 17,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -225,14 +198,7 @@ class _profileState extends State<profile> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return profitScreen();
-                    },
-                  ),
-                ); // Add you
+                // Add you
               },
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.40,
@@ -287,32 +253,6 @@ class _profileState extends State<profile> {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              "تفاصيل",
-                              style: profileDetils,
-                            ),
-                            SizedBox(
-                              width: 3,
-                            ),
-                            CircleAvatar(
-                              radius: 8,
-                              backgroundColor: Colors.white,
-                              child: Icon(
-                                Icons.keyboard_arrow_right,
-                                color: Color(0xffBA57D3),
-                                size: 17,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -357,8 +297,8 @@ class _profileState extends State<profile> {
                             width: 10,
                           ),
                           Container(
-                            width: 20,
-                            height: 20,
+                            width: 40,
+                            height: 40,
                             child: Image.asset("assets/images/fire.png"),
                           ),
                         ],

@@ -63,14 +63,14 @@ class _historyScreenState extends State<historyScreen> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        "ريال",
+                        "نقطة",
                         style: profitCurrncy,
                       ),
                       SizedBox(
                         width: 10,
                       ),
                       Text(
-                        "٤٨",
+                        "٥٠",
                         style: profitMoney,
                       ),
                       SizedBox(
@@ -147,7 +147,7 @@ class _historyScreenState extends State<historyScreen> {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    "١٤ ريال",
+                    "١٠ نقاط",
                     style: profitCurrncy,
                     textAlign: TextAlign.center,
                   ),

@@ -89,7 +89,7 @@ class _leaderboardState extends State<leaderboard> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            'إربح ١٠ ريال لكل ١٠٠ أسئلة',
+                            'إربح ١٠ نقاط لكل ١٠٠ سؤال',
                             style: TextStyle(
                                 color: Color(0xff333333),
                                 fontFamily: 'Cairo',
@@ -207,7 +207,7 @@ class _leaderboardState extends State<leaderboard> {
                         Container(
                           width: 18,
                           height: 17,
-                          child: Image.asset("assets/images/money.png"),
+                          child: Image.asset("assets/images/coin.png"),
                         ),
                       ],
                     ),
@@ -215,7 +215,7 @@ class _leaderboardState extends State<leaderboard> {
                 ),
                 Container(
                   child: Text(
-                    '٤٠٠ ريال',
+                    '١٠ نقاط',
                     style: TextStyle(fontSize: 16, fontFamily: 'Cairo'),
                   ),
                 ),
@@ -251,7 +251,7 @@ class _leaderboardState extends State<leaderboard> {
                 ),
                 Container(
                   child: Text(
-                    '٣٠ إجابة',
+                    '١٠٠ إجابة',
                     style: TextStyle(fontSize: 16, fontFamily: 'Cairo'),
                   ),
                 ),
@@ -287,7 +287,7 @@ class _leaderboardState extends State<leaderboard> {
                 ),
                 Container(
                   child: Text(
-                    '٣٣ د',
+                    '٦ د',
                     style: TextStyle(fontSize: 16, fontFamily: 'Cairo'),
                   ),
                 ),
